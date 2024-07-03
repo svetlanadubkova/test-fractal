@@ -5,14 +5,14 @@ const app = express();
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-  const filePath = path.join(__dirname, 'public', 'index.html'); // this makes a path to the index.html via: ./public/index.html
+  const filePath = path.join(__dirname,'index.html'); // this makes a path to the index.html via: ./public/index.html
   res.sendFile(filePath); // this line sends the file to the requesting client
 });
 
 // new route for about.html
 app.get('/about', (req, res) => {
   console.log('my silly message this is sent from inside the /about route handler')
-  res.sendFile(path.join(__dirname, 'public', 'about.html')); // send about.html when the user visits /about
+  res.sendFile(path.join(__dirname, 'about.html')); // send about.html when the user visits /about
 });
 
 // ... previous code ...
